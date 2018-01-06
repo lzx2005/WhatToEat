@@ -1,0 +1,56 @@
+<import src="../../wxss/dist/toptips/index.wxml" />
+<view class="container">
+   <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view> 
+
+  <view class="zan-panel dish-view zan-panel--without-border">
+    <view style="padding: 15px;">{{dish}}</view>
+  </view>
+
+  <view class="zan-panel">
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap='bindClickTap'>{{btnText}}</button>
+    </view>
+  </view>
+  <view class="zan-panel">
+    <view class="zan-cell zan-field">
+      <view class="zan-cell__hd zan-field__title">就餐人数</view>
+      <picker
+        mode="selector"
+        class="zan-field__input zan-cell__bd"
+        range="{{ people }}"
+        value="{{ peopleIndex }}"
+        bindchange="onPeopleChange">
+        {{ people[peopleIndex] }}
+      </picker>
+    </view>
+    <view class="zan-cell zan-field">
+      <view class="zan-cell__hd zan-field__title">消费预算</view>
+      <picker
+        mode="selector"
+        class="zan-field__input zan-cell__bd"
+        range="{{ budget }}"
+        value="{{ budgetIndex }}"
+        bindchange="onBudgetChange">
+        {{ budget[budgetIndex] }}
+      </picker>
+    </view>
+    <view class="zan-cell zan-field">
+      <view class="zan-cell__hd zan-field__title">就餐类型</view>
+      <picker
+        mode="selector"
+        class="zan-field__input zan-cell__bd"
+        range="{{ eatType }}"
+        value="{{ eatTypeIndex }}"
+        bindchange="onEatTypeChange">
+        {{ eatType[eatTypeIndex] }}
+      </picker>
+    </view>
+  </view>
+  <template is="zan-toptips" data="{{ zanTopTips }}"></template>
+</view>

@@ -1,0 +1,38 @@
+/* pages/map/map.wxss */
+
+/* 
+.dish-box{
+  padding: 20rpx;
+  width: 90%;
+  margin: 10rpx auto;
+}
+
+.rest-list {
+  padding-top: 0px;
+  align-self: auto;
+  text-align: left;
+  align-items:flex-start;
+}
+.rest-item {
+  font-size: 24rpx;
+  width: 90%;
+  margin: 10rpx auto;
+  padding: 20rpx;
+  background-color: #FFFFFE;
+  -moz-box-shadow:1px 1px 1px #919191; 
+  -webkit-box-shadow:1px 1px 1px #919191; 
+  box-shadow:1px 1px 1px #919191;
+}
+
+.rest-title{
+  font-size: 26rpx;
+}
+
+.rest-address{
+  font-size: 18rpx;
+}
+
+.rest-point{
+  width: 100rpx;
+  font-size: 10rpx;
+} */
