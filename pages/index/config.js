@@ -23,7 +23,7 @@ module.exports = {
     "麦当劳",
     "小龙虾"
   ],
-  dishesObject:[
+  dishesObjects:[
     {
       "name": "黄焖鸡米饭",
       "level": 1,
@@ -32,7 +32,8 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del":false
     }, {
       "name": "馄饨",
       "level": 1,
@@ -41,7 +42,8 @@ module.exports = {
       "breakfast": true,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "炒面",
       "level": 1,
@@ -50,7 +52,8 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "烤肉",
       "level": 2,
@@ -59,7 +62,8 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "咖喱",
       "level": 1,
@@ -68,7 +72,8 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "花甲",
       "level": 1,
@@ -77,7 +82,8 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "肯德基",
       "level": 2,
@@ -86,7 +92,8 @@ module.exports = {
       "breakfast": true,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "必胜客",
       "level": 2,
@@ -95,7 +102,8 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": false
+      "night": false,
+      "del": false
     }, {
       "name": "盖浇饭",
       "level": 1,
@@ -104,7 +112,8 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "卤肉饭",
       "level": 1,
@@ -113,7 +122,8 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "米线",
       "level": 1,
@@ -122,7 +132,8 @@ module.exports = {
       "breakfast": true,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "披萨",
       "level": 2,
@@ -131,16 +142,18 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "日料",
-      "level": 3,
+      "level": 2,
       "min": 2,
       "max": 6,
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": false
+      "night": false,
+      "del": false
     }, {
       "name": "火锅",
       "level": 2,
@@ -149,7 +162,8 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "烧烤",
       "level": 2,
@@ -158,7 +172,8 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "蛋糕",
       "level": 2,
@@ -167,7 +182,8 @@ module.exports = {
       "breakfast": true,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "韩国菜",
       "level": 2,
@@ -176,7 +192,8 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": false
+      "night": false,
+      "del": false
     }, {
       "name": "川菜",
       "level": 2,
@@ -185,7 +202,8 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": false
+      "night": false,
+      "del": false
     }, {
       "name": "江浙菜",
       "level": 2,
@@ -194,7 +212,8 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": false
+      "night": false,
+      "del": false
     }, {
       "name": "海鲜",
       "level": 2,
@@ -203,7 +222,8 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": false
+      "night": false,
+      "del": false
     }, {
       "name": "麦当劳",
       "level": 2,
@@ -212,7 +232,8 @@ module.exports = {
       "breakfast": true,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "小龙虾",
       "level": 2,
@@ -221,7 +242,8 @@ module.exports = {
       "breakfast": false,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "烧饼",
       "level": 1,
@@ -230,7 +252,8 @@ module.exports = {
       "breakfast": true,
       "lunch": false,
       "dinner": false,
-      "night": false
+      "night": false,
+      "del": false
     }, {
       "name": "油条",
       "level": 1,
@@ -239,7 +262,8 @@ module.exports = {
       "breakfast": true,
       "lunch": false,
       "dinner": false,
-      "night": false
+      "night": false,
+      "del": false
     }, {
       "name": "小笼包",
       "level": 1,
@@ -248,7 +272,8 @@ module.exports = {
       "breakfast": true,
       "lunch": false,
       "dinner": false,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "生煎",
       "level": 1,
@@ -257,7 +282,8 @@ module.exports = {
       "breakfast": true,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "煎饼",
       "level": 1,
@@ -266,7 +292,8 @@ module.exports = {
       "breakfast": true,
       "lunch": true,
       "dinner": true,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "包子",
       "level": 1,
@@ -275,7 +302,8 @@ module.exports = {
       "breakfast": true,
       "lunch": false,
       "dinner": false,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "豆浆",
       "level": 1,
@@ -284,7 +312,8 @@ module.exports = {
       "breakfast": true,
       "lunch": false,
       "dinner": false,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "粥",
       "level": 1,
@@ -293,7 +322,8 @@ module.exports = {
       "breakfast": true,
       "lunch": false,
       "dinner": false,
-      "night": true
+      "night": true,
+      "del": false
     }, {
       "name": "茶叶蛋",
       "level": 1,
@@ -302,7 +332,8 @@ module.exports = {
       "breakfast": true,
       "lunch": false,
       "dinner": false,
-      "night": true
+      "night": true,
+      "del": false
     }
   ]
 };

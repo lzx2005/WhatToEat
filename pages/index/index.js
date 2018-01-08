@@ -14,11 +14,11 @@ Page(Object.assign({}, Zan.TopTips, {
     hasUserInfo: false,
     count : 0,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    people: ["不限",'1狗', '2-4人', '5-8人', '8人以上'],
-    peopleIndex: 0,
-    budget: ["不限", "20元/人", "50元/人", "100元/人", "200元/人", "300元/人", "更高"],
+    // people: ["不限",'1狗', '2-4人', '5-8人', '8人以上'],
+    // peopleIndex: 0,
+    budget: ["不限", "随便凑合", "大吃一顿"],
     budgetIndex: 0,
-    eatType: ["不限","早餐", "午餐", "早午餐", "下午茶", "晚餐", "夜宵"],
+    eatType: ["不限", "早餐", "午餐",  "晚餐", "夜宵"],
     eatTypeIndex: 0
   },
   //事件处理函数
@@ -77,16 +77,23 @@ Page(Object.assign({}, Zan.TopTips, {
         isProcess: true,
         btnText: "决定了！"
       })
+
+      console.log(that.data.config.dishesObjects.length)
+      var newDishes = that.dishesFillter(
+        that.data.config.dishesObjects,
+        that.data.budgetIndex,
+        that.data.eatTypeIndex
+      );
       this.data.timer = setInterval(function () {
-        var randomIndex = Math.floor((Math.random() * 100 % that.data.config.dishesObject.length))
+        var randomIndex = Math.floor((Math.random() * 100 % newDishes.length))
+        var dishObject = newDishes[randomIndex]
         that.setData({
-          dish: that.data.config.dishesObject[randomIndex].name
+          dish: newDishes[randomIndex].name
         })
       }, 10);
     }
   },
   onLoad: function () {
-    console.log(config)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -123,6 +130,53 @@ Page(Object.assign({}, Zan.TopTips, {
     })
   },
   showTopTips() {
-    this.showZanTopTips('条件选择暂时没法用，因为还没写完，我传上来看看效果');
+    //this.showZanTopTips('条件选择暂时没法用，因为还没写完，我传上来看看效果');
+  },
+  //根据条件筛选出合适的列表
+  dishesFillter(dishObjects, budgetIndex, eatTypeIndex){
+    console.log("筛选", budgetIndex, eatTypeIndex)
+    var newDishes = new Array()
+    //对每个美食进行过滤
+    for(var dishObjectIndex in dishObjects){
+      var pass = true;
+      var dishObject = dishObjects[dishObjectIndex]
+      //判断消费类型
+      switch (parseInt(budgetIndex)) {
+        case 1:
+          //判断是否为“随便凑合”
+          if (!(dishObject.level === 1)) pass = false
+          break;
+        case 2:
+          //判断是否为“大吃一顿”
+          if (!(dishObject.level === 2)) pass = false
+          break;
+        default:
+      }
+      //判断就餐类型
+      switch (parseInt(eatTypeIndex)) {
+        case 1:
+          //判断是否为早餐
+          if (!dishObject.breakfast) pass = false
+          break;
+        case 2:
+          //判断是否为午餐
+          if (!dishObject.lunch) pass = false
+          break;
+        case 3:
+          //判断是否为晚餐
+          if (!dishObject.dinner) pass = false
+          break;
+        case 4:
+          //判断是否为夜宵
+          if (!dishObject.night) pass = false
+          break;
+        default:
+      }
+      //如果通过筛选则加到数组中
+      if(pass){
+        newDishes.push(dishObject)
+      }
+    }
+    return newDishes
   }
 }))
