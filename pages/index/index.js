@@ -1,34 +1,11 @@
 var Zan = require('../../wxss/dist/index');
 
+const config = require('./config');
 const app = getApp()
 const timer = null
 Page(Object.assign({}, Zan.TopTips, {
   data: {
-    dishes:[
-      "宫保鸡丁",
-      "黄焖鸡米饭",
-      "馄饨",
-      "炒面",
-      "沙县小吃",
-      "烤肉",
-      "咖喱",
-      "花甲",
-      "肯德基",
-      "必胜客",
-      "盖浇饭",
-      "卤肉饭",
-      "米线",
-      "披萨",
-      "日料",
-      "火锅",
-      "烧烤",
-      "蛋糕",
-      "韩国菜",
-      "川菜",
-      "江浙菜",
-      "麦当劳",
-      "小龙虾"
-    ],
+    config,
     dish: "今天吃什么呢？",
     btnText:"开始！",
     isProcess:false,
@@ -37,9 +14,9 @@ Page(Object.assign({}, Zan.TopTips, {
     hasUserInfo: false,
     count : 0,
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
-    people: ["不限",'1人', '2-4人', '5-8人', '8人以上'],
+    people: ["不限",'1狗', '2-4人', '5-8人', '8人以上'],
     peopleIndex: 0,
-    budget: ["不限","5元/人", "20元/人", "50元/人", "100元/人", "200元/人", "300元/人", "更高"],
+    budget: ["不限", "20元/人", "50元/人", "100元/人", "200元/人", "300元/人", "更高"],
     budgetIndex: 0,
     eatType: ["不限","早餐", "午餐", "早午餐", "下午茶", "晚餐", "夜宵"],
     eatTypeIndex: 0
@@ -101,14 +78,15 @@ Page(Object.assign({}, Zan.TopTips, {
         btnText: "决定了！"
       })
       this.data.timer = setInterval(function () {
-        var randomIndex = Math.floor((Math.random() * 100 % that.data.dishes.length))
+        var randomIndex = Math.floor((Math.random() * 100 % that.data.config.dishesObject.length))
         that.setData({
-          dish: that.data.dishes[randomIndex]
+          dish: that.data.config.dishesObject[randomIndex].name
         })
       }, 10);
     }
   },
   onLoad: function () {
+    console.log(config)
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
