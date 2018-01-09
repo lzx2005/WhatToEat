@@ -4,8 +4,16 @@
 <import src="../../wxss/dist/switch/index.wxml" />
 
 <view class="container">
-  <view class="zan-panel-title">
+  <view class="zan-panel-title zan-panel-title-custom">
     自定义菜单
+    <button 
+      class="zan-btn zan-btn--mini zan-btn--primary zan-pull-right zan-btn-custom">
+      添加
+    </button>
+    <button 
+      class="zan-btn zan-btn--mini zan-btn--warn zan-pull-right zan-btn-custom">
+      保存修改
+    </button>
   </view>
   <template is="zan-loadmore" data="{{ loading }}" />
   <block wx:for="{{dishesObjects}}" wx:for-item="dish">
@@ -21,10 +29,14 @@
               <template wx:if="{{dish.lunch}}" is="capsule" data="{{ leftText: '', rightText: '午餐', color: '#9966CC' }}" />
               <template wx:if="{{dish.dinner}}" is="capsule" data="{{ leftText: '', rightText: '晚餐', color: '#38f' }}" />
               <template wx:if="{{dish.night}}" is="capsule" data="{{ leftText: '', rightText: '夜宵', color: '#FF6633' }}" /> 
-              </view>
+            </view>
+            <view>
+               搜索词：{{dish.name}}
+            </view>
           </view>
         </view>
         <template is="zan-switch" data="{{ checked:dish.on,componentId:index }}"/>
+        <view class="zan-cell__ft zan-cell__ft-custom">编辑</view>
       </view>
     </view>
   </block>

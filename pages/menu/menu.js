@@ -16,9 +16,11 @@ Page(Object.assign({}, Zan.Switch, {
 
   handleZanSwitchChange(e) {
     console.log(e)
-    this.setData({
-      checked: e.checked
-    });
+
+    var param = {}
+    var key = "dishesObjects[" + e.componentId + "].on"
+    param[key] = e.checked
+    this.setData(param);
   },
   /**
    * 生命周期函数--监听页面加载
