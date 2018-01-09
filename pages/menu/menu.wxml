@@ -8,8 +8,8 @@
     自定义菜单
   </view>
   <template is="zan-loadmore" data="{{ loading }}" />
-  <block wx:for="{{config.dishesObjects}}" wx:for-item="dish">
-    <view id="{{index}}" data-index="{{index}}" class="zan-panel" bindtap="bindViewTap">
+  <block wx:for="{{dishesObjects}}" wx:for-item="dish">
+    <view id="{{index}}" data-index="{{index}}" class="zan-panel">
       <view class="zan-cell  zan-cell--access">
         <view class="zan-cell__bd">
           <view class="zan-cell__text">
@@ -21,25 +21,11 @@
               <template wx:if="{{dish.lunch}}" is="capsule" data="{{ leftText: '', rightText: '午餐', color: '#9966CC' }}" />
               <template wx:if="{{dish.dinner}}" is="capsule" data="{{ leftText: '', rightText: '晚餐', color: '#38f' }}" />
               <template wx:if="{{dish.night}}" is="capsule" data="{{ leftText: '', rightText: '夜宵', color: '#FF6633' }}" /> 
-              <!-- <view wx:if="{{dish.breakfast}}" class="zan-tag zan-tag--danger">早餐</view>
-              <view wx:if="{{dish.lunch}}" class="zan-tag zan-tag--warn">午餐</view>
-              <view wx:if="{{dish.dinner}}" class="zan-tag zan-tag--primary">晚餐</view>
-              <view wx:if="{{dish.night}}" class="zan-tag zan-tag--plain">夜宵</view> -->
               </view>
           </view>
         </view>
-        <template is="zan-switch" data="{{ checked:dish.on }}"/>
+        <template is="zan-switch" data="{{ checked:dish.on,componentId:index }}"/>
       </view>
     </view>
   </block>
 </view>
-
-<!-- <view class="container rest-list">
-  <block wx:for="{{rests}}" wx:for-item="rest">
-    <view class="rest-item">
-      <view class="rest-title">{{index + 1}}. {{rest.title}}</view>
-      <view class="rest-address">{{rest.address}}</view>
-      <button class='rest-point' bindtap="bindViewTap">坐标</button>
-    </view>
-  </block>
-</view> -->

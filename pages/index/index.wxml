@@ -1,5 +1,7 @@
 <import src="../../wxss/dist/toptips/index.wxml" />
+<import src="../../wxss/dist/loadmore/index.wxml" />
 <view class="container">
+  <template is="zan-loadmore" data="{{ loading }}" />
    <view class="userinfo">
     <block wx:if="{{hasUserInfo}}">
       <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>

@@ -1,22 +1,60 @@
 // pages/menu/menu.js
 const config = require('../index/config.js');
-Page({
+var Zan = require('../../wxss/dist/index');
+
+Page(Object.assign({}, Zan.Switch, {
 
   /**
    * 页面的初始数据
    */
   data: {
     config,
-    checked: true
+    checked: true,
+    dishesObjects: null,
+    loading: true
   },
 
+  handleZanSwitchChange(e) {
+    console.log(e)
+    this.setData({
+      checked: e.checked
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getDishesObjects();
   },
-
+  getDishesObjects(){
+    var that = this
+    wx.getStorage({
+      key: 'dishesObjects',
+      success: function (res) {
+        console.log("成功获取到数据...")
+        console.log(res)
+        that.setData({
+          dishesObjects: res.data,
+          loading: false
+        });
+      },
+      fail: function (e) {
+        console.log(e,"没有找到，从配置中加载默认数据")
+        //没有找到，从配置中加载默认数据
+        wx.setStorage({
+          key: "dishesObjects",
+          data: config.dishesObjects,
+          success: function (res){
+            console.log("存储成功，重新读取...");
+            that.getDishesObjects();
+          },
+          fail: function () {
+            console.log("存储失败，提示用户...");
+          }
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -65,4 +103,4 @@ Page({
   onShareAppMessage: function () {
   
   }
-})
+}))
