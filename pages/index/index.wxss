@@ -38,3 +38,15 @@
   text-align: center;
   font-size: 34rpx;
 }
+
+
+.footer-nav{
+  margin: 100rpx 0 30rpx 0;
+  text-align: center;
+  font-size: 22rpx;
+}
+
+.footer-view{
+  color: #0099FF;
+  display: inline-block
+}

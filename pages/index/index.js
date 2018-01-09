@@ -45,6 +45,11 @@ Page(Object.assign({}, Zan.TopTips, {
       eatTypeIndex: e.detail.value
     });
   },
+  toCustomMenu: function(){
+    wx.navigateTo({
+      url: '../menu/menu'
+    })
+  },
   bindClickTap: function () {
     var that = this
     clearInterval(this.data.timer);
@@ -94,6 +99,7 @@ Page(Object.assign({}, Zan.TopTips, {
     }
   },
   onLoad: function () {
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,

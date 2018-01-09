@@ -8,7 +8,8 @@ Page( {
     rests: [],
     dish: null,
     total: 0,
-    checked: false
+    checked: false,
+    loading: true
   },
   bindViewTap: function (e) {
     var info = this.data.rests[e.currentTarget.id]
@@ -42,7 +43,8 @@ Page( {
       console.log(info)
       that.setData({
         rests: info,
-        total: info.length
+        total: info.length,
+        loading : false
       })
       if (info.length>0){
         

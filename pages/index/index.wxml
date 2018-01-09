@@ -50,6 +50,14 @@
         {{ eatType[eatTypeIndex] }}
       </picker>
     </view>
+  </view>  
+  <view class="footer-nav">
+    <view 
+      class='footer-view' 
+      url='pages/menu/menu'
+      bindtap='toCustomMenu'>
+      自定义菜单
+    </view>
   </view>
   <template is="zan-toptips" data="{{ zanTopTips }}"></template>
 </view>

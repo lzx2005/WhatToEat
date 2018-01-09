@@ -1,9 +1,11 @@
 <!-- pages/map/map.wxml -->
+<import src="../../wxss/dist/loadmore/index.wxml" />
 
 <view class="container">
   <view class="zan-panel-title">
     今天就吃{{dish}}！为您找到{{total}}家有关{{dish}}的地方：
   </view>
+  <template is="zan-loadmore" data="{{ loading }}" />
   <block wx:for="{{rests}}" wx:for-item="rest">
     <view id="{{index}}" data-index="{{index}}" class="zan-panel" bindtap="bindViewTap">
       <view class="zan-cell  zan-cell--access">

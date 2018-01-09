@@ -2,12 +2,13 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/menu/menu"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "今天吃什么",
     "navigationBarTextStyle": "black"
   }
 }
