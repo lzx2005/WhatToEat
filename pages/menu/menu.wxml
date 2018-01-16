@@ -11,7 +11,8 @@
       添加
     </button>
     <button 
-      class="zan-btn zan-btn--mini zan-btn--warn zan-pull-right zan-btn-custom">
+      class="zan-btn zan-btn--mini zan-btn--warn zan-pull-right zan-btn-custom"
+      bindtap="save">
       保存修改
     </button>
   </view>

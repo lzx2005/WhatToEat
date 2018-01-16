@@ -57,6 +57,40 @@ Page(Object.assign({}, Zan.Switch, {
       }
     })
   },
+  save: function () {
+    var that = this
+    wx.setStorage({
+      key: "dishesObjects",
+      data: that.data.dishesObjects,
+      success: function (res) {
+        console.log("存储成功，重新读取...");
+        that.getDishesObjects();
+        wx.showModal({
+          title: '提示',
+          content: '保存成功',
+          showCancel: false,
+          success: function (res) {
+            wx.navigateBack({
+              delta: 1
+            })
+          }
+        })
+      },
+      fail: function () {
+        console.log("存储失败，提示用户...");
+        wx.showModal({
+          title: '提示',
+          content: '保存失败',
+          showCancel: false,
+          success: function (res) {
+            wx.navigateBack({
+              delta: 1
+            })
+          }
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

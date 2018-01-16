@@ -6,6 +6,7 @@ const timer = null
 Page(Object.assign({}, Zan.TopTips, {
   data: {
     config,
+    dishesObjects: null,
     dish: "今天吃什么呢？",
     btnText:"开始！",
     isProcess:false,
@@ -84,9 +85,9 @@ Page(Object.assign({}, Zan.TopTips, {
         btnText: "决定了！"
       })
 
-      console.log(that.data.config.dishesObjects.length)
+      console.log(that.data.dishesObjects.length)
       var newDishes = that.dishesFillter(
-        that.data.config.dishesObjects,
+        that.data.dishesObjects,
         that.data.budgetIndex,
         that.data.eatTypeIndex
       );
@@ -100,7 +101,6 @@ Page(Object.assign({}, Zan.TopTips, {
     }
   },
   onLoad: function () {
-
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
@@ -185,11 +185,46 @@ Page(Object.assign({}, Zan.TopTips, {
           break;
         default:
       }
+      if (!dishObject.on){
+        pass = false
+      }
       //如果通过筛选则加到数组中
       if(pass){
         newDishes.push(dishObject)
       }
     }
     return newDishes
-  }
+  },
+  getDishesObjects() {
+    var that = this
+    wx.getStorage({
+      key: 'dishesObjects',
+      success: function (res) {
+        console.log("成功获取到数据...")
+        console.log(res)
+        that.setData({
+          dishesObjects: res.data,
+          loading: false
+        });
+      },
+      fail: function (e) {
+        console.log(e, "没有找到，从配置中加载默认数据")
+        //没有找到，从配置中加载默认数据
+        wx.setStorage({
+          key: "dishesObjects",
+          data: config.dishesObjects,
+          success: function (res) {
+            console.log("存储成功，重新读取...");
+            that.getDishesObjects();
+          },
+          fail: function () {
+            console.log("存储失败，提示用户...");
+          }
+        })
+      }
+    })
+  },
+  onShow: function () {
+    this.getDishesObjects()
+  },
 }))
