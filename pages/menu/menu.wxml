@@ -7,7 +7,8 @@
   <view class="zan-panel-title zan-panel-title-custom">
     自定义菜单
     <button 
-      class="zan-btn zan-btn--mini zan-btn--primary zan-pull-right zan-btn-custom">
+      class="zan-btn zan-btn--mini zan-btn--primary zan-pull-right zan-btn-custom"
+      bindtap="showAdd">
       添加
     </button>
     <button 

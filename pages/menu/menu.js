@@ -26,7 +26,6 @@ Page(Object.assign({}, Zan.Switch, {
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getDishesObjects();
   },
   getDishesObjects(){
     var that = this
@@ -91,6 +90,11 @@ Page(Object.assign({}, Zan.Switch, {
       }
     })
   },
+  showAdd: function(){
+    wx.navigateTo({
+      url: '../menu_add/menu_add'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -102,9 +106,8 @@ Page(Object.assign({}, Zan.Switch, {
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.getDishesObjects()
   },
-
   /**
    * 生命周期函数--监听页面隐藏
    */
