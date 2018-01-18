@@ -81,10 +81,6 @@ Page(Object.assign({}, Zan.TopTips, {
       })
     } else {
       console.log("开始")
-      this.setData({
-        isProcess: true,
-        btnText: "决定了！"
-      })
 
       console.log(that.data.dishesObjects.length)
       var newDishes = that.dishesFillter(
@@ -92,14 +88,26 @@ Page(Object.assign({}, Zan.TopTips, {
         that.data.budgetIndex,
         that.data.eatTypeIndex
       );
-      this.data.timer = setInterval(function () {
-        var randomIndex = Math.floor((Math.random() * 100 % newDishes.length))
-        var dishObject = newDishes[randomIndex]
-        that.setData({
-          dish: newDishes[randomIndex].name,
-          keyword: newDishes[randomIndex].keyword
+      if (newDishes.length > 0) {
+        this.setData({
+          isProcess: true,
+          btnText: "决定了！"
         })
-      }, 10);
+        this.data.timer = setInterval(function () {
+          var randomIndex = Math.floor((Math.random() * 100 % newDishes.length))
+          var dishObject = newDishes[randomIndex]
+          that.setData({
+            dish: newDishes[randomIndex].name,
+            keyword: newDishes[randomIndex].keyword
+          })
+        }, 10);
+      }else{
+        wx.showModal({
+          title: '提示',
+          content: '菜单为空，请到自定义菜单中添加',
+          showCancel: false
+        })
+      }
     }
   },
   onLoad: function () {

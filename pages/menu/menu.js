@@ -73,8 +73,8 @@ Page(Object.assign({}, Zan.Switch, {
           content: '保存成功',
           showCancel: false,
           success: function (res) {
-            wx.navigateBack({
-              delta: 1
+            that.setData({
+              edited: false
             })
           }
         })
@@ -125,9 +125,23 @@ Page(Object.assign({}, Zan.Switch, {
     })
   },
   showAdd: function(){
-    wx.navigateTo({
-      url: '../menu_add/menu_add'
-    })
+    if(this.data.edited){
+      wx.showModal({
+        title: '提示',
+        content: '修改未保存，确定要跳转吗？',
+        success: function (res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '../menu_add/menu_add'
+            })
+          }
+        }
+      })
+    }else{
+      wx.navigateTo({
+        url: '../menu_add/menu_add'
+      })
+    }
   },
   onUnload: function(){
     console.log("返回")
