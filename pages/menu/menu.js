@@ -11,7 +11,8 @@ Page(Object.assign({}, Zan.Switch, {
     config,
     checked: true,
     dishesObjects: null,
-    loading: true
+    loading: true,
+    edited: false
   },
 
   handleZanSwitchChange(e) {
@@ -21,6 +22,9 @@ Page(Object.assign({}, Zan.Switch, {
     var key = "dishesObjects[" + e.componentId + "].on"
     param[key] = e.checked
     this.setData(param);
+    this.setData({
+      edited : true
+    })
   },
   /**
    * 生命周期函数--监听页面加载
@@ -90,10 +94,43 @@ Page(Object.assign({}, Zan.Switch, {
       }
     })
   },
+  deleteDish: function(e){
+    var index = e.currentTarget.dataset.did
+    var array = this.data.dishesObjects
+    array.splice(index, 1)
+    this.setData({
+      dishesObjects : array
+    })
+    this.setData({
+      edited: true
+    })
+  },
+  setDefault: function(){
+    var that = this
+    wx.showModal({
+      title: '提示',
+      content: '确定要恢复默认吗？',
+      success: function (res) {
+        that.setData({
+          dishesObjects:null,
+          loading: true
+        })
+        wx.removeStorage({
+          key: 'dishesObjects',
+          success: function (res) {
+            that.getDishesObjects()
+          }
+        })
+      }
+    })
+  },
   showAdd: function(){
     wx.navigateTo({
       url: '../menu_add/menu_add'
     })
+  },
+  onUnload: function(){
+    console.log("返回")
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

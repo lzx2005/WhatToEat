@@ -8,6 +8,7 @@ Page(Object.assign({}, Zan.TopTips, {
     config,
     dishesObjects: null,
     dish: "今天吃什么呢？",
+    keyword: '',
     btnText:"开始！",
     isProcess:false,
     motto: 'Hello World',
@@ -71,7 +72,7 @@ Page(Object.assign({}, Zan.TopTips, {
           if (res.confirm) {
             console.log('用户点击确定')
             wx.navigateTo({
-              url: '../map/map?dish='+that.data.dish
+              url: '../map/map?dish=' + that.data.dish + '&keyword=' + that.data.keyword
             })
           } else if (res.cancel) {
             console.log('用户点击取消')
@@ -95,7 +96,8 @@ Page(Object.assign({}, Zan.TopTips, {
         var randomIndex = Math.floor((Math.random() * 100 % newDishes.length))
         var dishObject = newDishes[randomIndex]
         that.setData({
-          dish: newDishes[randomIndex].name
+          dish: newDishes[randomIndex].name,
+          keyword: newDishes[randomIndex].keyword
         })
       }, 10);
     }

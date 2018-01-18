@@ -8,8 +8,8 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
    */
   data: {
     config,
-    value: 'test',
-    textareaValue: 'test textarea',
+    title: '',
+    keyword: '',
     level: ['随便凑合', '大吃一顿'],
     levelIndex: 0,
     sw: {
@@ -36,7 +36,10 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
   },
   handleZanFieldChange(e) {
     const { componentId, detail } = e;
-
+    var param = {}
+    var key = e.componentId
+    param[key] = detail.value
+    this.setData(param);
     console.log('[zan:field:change]', componentId, detail);
   },
 
@@ -51,25 +54,91 @@ Page(Object.assign({}, Zan.Field, Zan.Switch, {
 
     console.log('[zan:field:blur]', componentId, detail);
   },
+  save:function(){
+    console.log(this.data.title)
+    console.log(this.data.keyword)
+    console.log(this.data.levelIndex)
+    console.log(this.data.sw.breakfast)
+    console.log(this.data.sw.lunch)
+    console.log(this.data.sw.dinner)
+    console.log(this.data.sw.night)
+    if (this.data.title === ''){
+      wx.showModal({
+        title: '提示',
+        content: '请填写标题',
+        showCancel: false
+      })
+    } else if (this.data.keyword===''){
+      wx.showModal({
+        title: '提示',
+        content: '请填写搜索词',
+        showCancel: false
+      })
+    }else{
+      var dish = {
+        "name": this.data.title,
+        "level": this.data.levelIndex + 1,
+        "breakfast": this.data.sw.breakfast,
+        "lunch": this.data.sw.lunch,
+        "dinner": this.data.sw.dinner,
+        "night": this.data.sw.night,
+        "on": true,
+        "keyword": this.data.keyword,
+        "custom": true
+      }
 
-  clearInput() {
-    this.setData({
-      value: ''
-    });
-  },
-
-  clearTextarea() {
-    this.setData({
-      textareaValue: ''
-    });
-  },
-
-  formSubmit(event) {
-    console.log('[zan:field:submit]', event.detail.value);
-  },
-
-  formReset(event) {
-    console.log('[zan:field:reset]', event);
+      wx.getStorage({
+        key: 'dishesObjects',
+        success: function (res) {
+          console.log("成功获取到数据...")
+          console.log(res)
+          res.data.push(dish)
+          wx.setStorage({
+            key: "dishesObjects",
+            data: res.data,
+            success: function (res) {
+              console.log("存储成功，返回上一页...");
+              wx.showModal({
+                title: '提示',
+                content: '保存成功',
+                showCancel: false,
+                success: function (res) {
+                  wx.navigateBack({
+                    delta: 1
+                  })
+                }
+              })
+            },
+            fail: function () {
+              console.log("存储失败，提示用户...");
+              wx.showModal({
+                title: '提示',
+                content: '保存失败',
+                showCancel: false,
+                success: function (res) {
+                  wx.navigateBack({
+                    delta: 1
+                  })
+                }
+              })
+            }
+          })
+        },
+        fail: function (e) {
+          console.log(e, "没有找到，从配置中加载默认数据")
+          wx.showModal({
+            title: '提示',
+            content: '菜单丢失，返回首页重新加载...',
+            showCancel: false,
+            success: function (res) {
+              wx.navigateBack({
+                delta: 2
+              })
+            }
+          })
+        }
+      })
+    }
   },
 
   /**

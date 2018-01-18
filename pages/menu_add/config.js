@@ -29,14 +29,16 @@ module.exports = {
       mode: 'wrapped',
       title: '名称',
       inputType: 'text',
-      placeholder: '请输入菜品名称'
+      placeholder: '请输入菜品名称',
+      componentId:"title"
     },
     keyword: {
       right: true,
       mode: 'wrapped',
       title: '搜索词',
       inputType: 'text',
-      placeholder: '搜索地图的关键字'
+      placeholder: '搜索地图的关键字',
+      componentId: "keyword"
     }
   },
   // Form 中使用输入框

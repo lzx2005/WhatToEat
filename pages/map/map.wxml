@@ -3,7 +3,7 @@
 
 <view class="container">
   <view class="zan-panel-title">
-    今天就吃{{dish}}！为您找到{{total}}家有关{{dish}}的地方：
+    今天就吃{{dish}}！为您找到{{total}}家可以品尝到{{dish}}的地方：
   </view>
   <template is="zan-loadmore" data="{{ loading }}" />
   <block wx:for="{{rests}}" wx:for-item="rest">

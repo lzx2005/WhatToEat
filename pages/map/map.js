@@ -7,6 +7,7 @@ Page( {
   data: {
     rests: [],
     dish: null,
+    keyword: null,
     total: 0,
     checked: false,
     loading: true
@@ -27,9 +28,10 @@ Page( {
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options.dish)
+    console.log(options.dish, options.keyword)
     this.setData({
-      dish : options.dish
+      dish: options.dish,
+      keyword : options.keyword
     })
     var that = this;
     var BMap = new bmap.BMapWX({
@@ -57,9 +59,13 @@ Page( {
         // })
       }
     }
+    var query = this.data.keyword
+    if (query == null || query === '' || query ==='undefined'){
+      query = this.data.dish
+    }
     // 发起POI检索请求 
     BMap.search({
-      "query": options.dish,
+      "query": query,
       //"query": "馄饨",
       fail: fail,
       success: success

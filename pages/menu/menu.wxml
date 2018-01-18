@@ -5,7 +5,12 @@
 
 <view class="container">
   <view class="zan-panel-title zan-panel-title-custom">
-    自定义菜单
+    菜单
+    <button 
+      class="zan-btn zan-btn--mini zan-btn--default zan-pull-right zan-btn-custom"
+      bindtap="setDefault">
+      默认
+    </button>
     <button 
       class="zan-btn zan-btn--mini zan-btn--primary zan-pull-right zan-btn-custom"
       bindtap="showAdd">
@@ -13,7 +18,8 @@
     </button>
     <button 
       class="zan-btn zan-btn--mini zan-btn--warn zan-pull-right zan-btn-custom"
-      bindtap="save">
+      bindtap="save"
+      wx:if='{{ edited }}'>
       保存修改
     </button>
   </view>
@@ -33,13 +39,28 @@
               <template wx:if="{{dish.night}}" is="capsule" data="{{ leftText: '', rightText: '夜宵', color: '#FF6633' }}" /> 
             </view>
             <view>
-               搜索词：{{dish.name}}
+              <view>
+               搜索词：{{dish.keyword}}
+              </view>
             </view>
           </view>
         </view>
         <template is="zan-switch" data="{{ checked:dish.on,componentId:index }}"/>
-        <view class="zan-cell__ft zan-cell__ft-custom">编辑</view>
+        <!-- <view class="zan-cell__ft zan-cell__ft-custom">编辑</view> -->
+        <button 
+          data-did='{{index}}'
+          class="zan-btn zan-btn--mini zan-btn--danger zan-pull-right zan-btn-custom"
+          bindtap="deleteDish"
+          componentId="{{index}}">
+          删除
+        </button>
       </view>
     </view>
   </block>
+
+  <view class="zan-panel" wx:if='{{ edited }}'>
+    <view class="zan-btns">
+      <button class="zan-btn zan-btn--primary" bindtap='save'>修改过记得点我保存哦!</button>
+    </view>
+  </view>
 </view>
