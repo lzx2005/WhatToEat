@@ -7,12 +7,7 @@
 
 ## 效果：
 
-![](https://ws1.sinaimg.cn/large/9876e666gy1fo81kq8psuj20tz1haace.jpg)
-
-![](https://ws1.sinaimg.cn/large/9876e666gy1fo81kpokfjj20tz1hajwq.jpg)
-
-![](https://ws1.sinaimg.cn/large/9876e666gy1fo81krepwcj20tz1ha42t.jpg)
-
+![](https://ws1.sinaimg.cn/large/9876e666gy1fplkwrrkuuj23xq1rm4qp.jpg)
 
 ## 反馈与建议
 - 微博：[@lzx2005](http://weibo.com/u/2557929062)
