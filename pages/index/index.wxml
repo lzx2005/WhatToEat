@@ -54,18 +54,8 @@
     </view>
   </view>  
   <view class="footer-nav">
-    <view 
-      class='footer-view' 
-      url='pages/menu/menu'
-      bindtap='toCustomMenu'>
-      自定义菜单
-    </view>
-    <view 
-      class='footer-view' 
-      url='pages/pie/pie'
-      bindtap='toPie'>
-      数据统计
-    </view>
+    <button class="zan-btn zan-btn--small" bindtap='toCustomMenu'>自定义菜单</button>
+    <button class="zan-btn zan-btn--small" bindtap='toPie'>数据统计</button>
   </view>
   <template is="zan-toptips" data="{{ zanTopTips }}"></template>
 </view>
