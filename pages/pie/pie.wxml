@@ -1,0 +1,20 @@
+<!--index.wxml-->
+
+<import src="../../wxss/dist/loadmore/index.wxml" />
+
+<template is="zan-loadmore" data="{{ loading }}" />
+<block wx:if="{{!loading}}">
+  <view class="zan-panel" bindtap="bindViewTap">
+    <view class="zan-cell  zan-cell--access">
+      <view class="zan-cell__bd cavans-view">
+          <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ec }}"></ec-canvas>
+      </view>
+    </view>
+  </view>
+</block>
+
+<view class="zan-panel" wx:if="{{!loading}}">
+  <view class="zan-btns">
+    <button class="zan-btn zan-btn--primary" bindtap='cleanData'>清空数据</button>
+  </view>
+</view>

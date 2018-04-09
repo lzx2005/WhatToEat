@@ -60,6 +60,12 @@
       bindtap='toCustomMenu'>
       自定义菜单
     </view>
+    <view 
+      class='footer-view' 
+      url='pages/pie/pie'
+      bindtap='toPie'>
+      数据统计
+    </view>
   </view>
   <template is="zan-toptips" data="{{ zanTopTips }}"></template>
 </view>

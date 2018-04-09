@@ -48,5 +48,6 @@
 
 .footer-view{
   color: #0099FF;
-  display: inline-block
+  display: inline-block;
+  padding-left: 10rpx;
 }

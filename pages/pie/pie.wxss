@@ -1,0 +1,30 @@
+
+
+ec-canvas {
+  width: 100%;
+  height: 500px;
+}
+button {
+  margin: 10px;
+}
+
+
+.cavans-view{
+  min-height: 500rpx;
+  width: 100%;
+  top: -100;
+  left: 0;
+  right: 0;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+
+}
+
+.zan-cell{
+  padding: 12px 0px
+}

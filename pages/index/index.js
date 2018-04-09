@@ -48,9 +48,14 @@ Page(Object.assign({}, Zan.TopTips, {
       eatTypeIndex: e.detail.value
     });
   },
-  toCustomMenu: function(){
+  toCustomMenu: function () {
     wx.navigateTo({
       url: '../menu/menu'
+    })
+  },
+  toPie: function () {
+    wx.navigateTo({
+      url: '../pie/pie'
     })
   },
   bindClickTap: function () {
