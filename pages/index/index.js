@@ -71,6 +71,8 @@ Page(Object.assign({}, Zan.TopTips, {
         success: function (res) {
           if (res.confirm) {
             console.log('用户点击确定')
+            // todo 记录数据
+            that.recordData(that.data.dish);
             wx.navigateTo({
               url: '../map/map?dish=' + that.data.dish + '&keyword=' + that.data.keyword
             })
@@ -230,6 +232,31 @@ Page(Object.assign({}, Zan.TopTips, {
           fail: function () {
             console.log("存储失败，提示用户...");
           }
+        })
+      }
+    })
+  },
+  recordData(dishName){
+    wx.getStorage({
+      key: 'confirmDishes',
+      success: function (res) {
+        console.log(res)
+        if (res.data[dishName]){
+          res.data[dishName] += 1
+        } else {
+          res.data[dishName] = 1
+        }
+        wx.setStorage({
+          key: "confirmDishes",
+          data: res.data
+        })
+      },
+      fail: function (e) {
+        var obj = new Object();
+        obj[dishName] = 1;
+        wx.setStorage({
+          key: "confirmDishes",
+          data: obj
         })
       }
     })

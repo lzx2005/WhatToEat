@@ -16,6 +16,9 @@
           <view class="zan-cell__desc">
             {{rest.address}}
           </view>
+          <view class="zan-cell__desc">
+            {{rest.telephone}}
+          </view>
         </view>
         <view class="zan-cell__ft">坐标</view>
       </view>
