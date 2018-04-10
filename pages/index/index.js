@@ -269,4 +269,11 @@ Page(Object.assign({}, Zan.TopTips, {
   onShow: function () {
     this.getDishesObjects()
   },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
 }))
