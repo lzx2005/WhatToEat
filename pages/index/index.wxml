@@ -57,5 +57,16 @@
     <button class="zan-btn zan-btn--small" bindtap='toCustomMenu'>自定义菜单</button>
     <button class="zan-btn zan-btn--small" bindtap='toPie'>数据统计</button>
   </view>
+
+  <view class="footer-nav footer-plus">
+    <hr></hr>
+    <view 
+      class='footer-view' 
+      url='pages/about/about'
+      bindtap='toAbout'>
+      关于软件
+    </view>
+    <view>Copyright © 2017-2018 WhatToEat</view>
+  </view>
   <template is="zan-toptips" data="{{ zanTopTips }}"></template>
 </view>

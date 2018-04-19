@@ -58,6 +58,11 @@ Page(Object.assign({}, Zan.TopTips, {
       url: '../pie/pie'
     })
   },
+  toAbout: function () {
+    wx.navigateTo({
+      url: '../about/about'
+    })
+  },
   bindClickTap: function () {
     var that = this
     clearInterval(this.data.timer);

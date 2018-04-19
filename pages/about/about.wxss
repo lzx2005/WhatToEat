@@ -1,1 +1,72 @@
 /* pages/about/about.wxss */
+@import "../../wxss/index.wxss";
+
+page{
+  background-color: #F7F7F7;
+}
+
+.container{
+  padding: 0 10px;
+}
+
+.panel-custom{
+  font-size: 24rpx;
+  padding: 30rpx;
+}
+
+.indent-custom{
+  text-indent: 2em;
+}
+
+.panel-author{
+  padding: 50rpx 20rpx;
+}
+
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #000;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.zan-capsule{
+  display: block;
+  transform-origin: left;
+}
+.p-custom{
+  padding-top: 10rpx 
+}
+
+.author-info{
+  font-size: 20rpx;
+  color: gray;
+}
+
+.icon{
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.zan-row{
+  width: 100%;
+  padding: 40rpx 0 0 0; 
+}
+
+.zan-col{
+  text-align: center;
+}

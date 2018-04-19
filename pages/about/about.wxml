@@ -1,2 +1,47 @@
 <!--pages/about/about.wxml-->
-<text>pages/about/about.wxml</text>
+<import src="../../wxss/dist/capsule/index.wxml" />
+
+<view class='container'>
+  <view class="zan-panel-title">关于软件</view>
+  <view class="zan-panel panel-custom  zan-panel--without-border">
+    <view class='p-custom'>本软件是一款专门为吃货并且是选择恐惧症的患者准备的，它可以帮你选择你今天想吃的美食，并根据你的定位获取你当前周边的美食。</view>
+    <view class='p-custom'>
+      特别感谢：
+      <template is="capsule" data="{{ leftText: '微信', rightText: '微信小程序', color:'#62b900' }}" />
+      <template is="capsule" data="{{ leftText: '有赞', rightText: 'ZanUI微信组件', type: 'danger' }}" />
+      <template is="capsule" data="{{ leftText: '百度', rightText: '百度地图API', color: '#38f' }}" />
+      <template is="capsule" data="{{ leftText: '百度', rightText: '百度Echarts微信小程序版', color: '#BB00BB' }}" />
+      <template is="capsule" data="{{ leftText: '自己', rightText: '辛苦的劳动', color: '#333333' }}" />
+    </view>
+  </view>
+  <view class="zan-panel-title">关于作者</view>
+  <view class="zan-panel panel-author zan-panel--without-border">
+    <view class="userinfo">
+      <block>
+        <image class="userinfo-avatar" src="./img/avatar.jpeg" background-size="cover"></image>
+        <text class="userinfo-nickname">John Lee</text>
+        <text class="author-info">94年生，喜爱程序开发，目前在杭州从事Java研发的工作。</text>
+        <view class="zan-row">
+            <view class="zan-col zan-col-4">
+              <image class='icon' src="" background-size="cover"></image>
+            </view>
+            <view class="zan-col zan-col-4" bindtap='copyEmail'>
+              <image class='icon' src="./img/icon/gmail.png" background-size="cover"></image>
+            </view>
+            <view class="zan-col zan-col-4">
+              <image class='icon' src="./img/icon/github.png" background-size="cover"></image>
+            </view>
+            <view class="zan-col zan-col-4">
+              <image class='icon' src="./img/icon/weibo.png" background-size="cover"></image>
+            </view>
+            <view class="zan-col zan-col-4">
+              <image class='icon' src="./img/icon/zhihu.png" background-size="cover"></image>
+            </view>
+            <view class="zan-col zan-col-4">
+              <image class='icon' src="" background-size="cover"></image>
+            </view>
+        </view>
+      </block>
+    </view> 
+  </view>
+</view>
