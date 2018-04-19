@@ -103,6 +103,9 @@ Page(Object.assign({}, Zan.TopTips, {
         this.data.timer = setInterval(function () {
           var randomIndex = Math.floor((Math.random() * 100 % newDishes.length))
           var dishObject = newDishes[randomIndex]
+          if (!newDishes[randomIndex].keyword){
+            newDishes[randomIndex].keyword = newDishes[randomIndex].name
+          }
           that.setData({
             dish: newDishes[randomIndex].name,
             keyword: newDishes[randomIndex].keyword
@@ -275,5 +278,15 @@ Page(Object.assign({}, Zan.TopTips, {
    */
   onShareAppMessage: function () {
 
+    return {
+      title: '不知道吃什么？进来选',
+      path: '/pages/index/index',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   }
 }))

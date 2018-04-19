@@ -5,7 +5,8 @@
     "pages/map/map",
     "pages/menu/menu",
     "pages/menu_add/menu_add",
-    "pages/pie/pie"
+    "pages/pie/pie",
+    "pages/about/about"
   ],
   "window": {
     "backgroundTextStyle": "light",
