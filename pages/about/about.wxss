@@ -53,6 +53,7 @@ page{
 }
 
 .author-info{
+  padding-top: 15rpx;
   font-size: 20rpx;
   color: gray;
 }

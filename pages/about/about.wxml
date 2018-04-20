@@ -12,6 +12,7 @@
       <template is="capsule" data="{{ leftText: '百度', rightText: '百度地图API', color: '#38f' }}" />
       <template is="capsule" data="{{ leftText: '百度', rightText: '百度Echarts微信小程序版', color: '#BB00BB' }}" />
       <template is="capsule" data="{{ leftText: '自己', rightText: '辛苦的劳动', color: '#333333' }}" />
+      <template is="capsule" data="{{ leftText: '自己', rightText: '聪明的大脑', color: '#333444' }}" />
     </view>
   </view>
   <view class="zan-panel-title">关于作者</view>
@@ -25,16 +26,16 @@
             <view class="zan-col zan-col-4">
               <image class='icon' src="" background-size="cover"></image>
             </view>
-            <view class="zan-col zan-col-4" bindtap='copyEmail'>
+            <view class="zan-col zan-col-4" data-index="0" bindtap='copy'>
               <image class='icon' src="./img/icon/gmail.png" background-size="cover"></image>
             </view>
-            <view class="zan-col zan-col-4">
+            <view class="zan-col zan-col-4" data-index="1" bindtap='copy'>
               <image class='icon' src="./img/icon/github.png" background-size="cover"></image>
             </view>
-            <view class="zan-col zan-col-4">
+            <view class="zan-col zan-col-4" data-index="2" bindtap='copy'>
               <image class='icon' src="./img/icon/weibo.png" background-size="cover"></image>
             </view>
-            <view class="zan-col zan-col-4">
+            <view class="zan-col zan-col-4" data-index="3" bindtap='copy'>
               <image class='icon' src="./img/icon/zhihu.png" background-size="cover"></image>
             </view>
             <view class="zan-col zan-col-4">
