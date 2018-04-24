@@ -12,7 +12,7 @@
       <template is="capsule" data="{{ leftText: '百度', rightText: '百度地图API', color: '#38f' }}" />
       <template is="capsule" data="{{ leftText: '百度', rightText: '百度Echarts微信小程序版', color: '#BB00BB' }}" />
       <template is="capsule" data="{{ leftText: '自己', rightText: '辛苦的劳动', color: '#333333' }}" />
-      <template is="capsule" data="{{ leftText: '自己', rightText: '聪明的大脑', color: '#333444' }}" />
+      <!-- <template is="capsule" data="{{ leftText: '自己', rightText: '聪明的大脑', color: '#333444' }}" /> -->
     </view>
   </view>
   <view class="zan-panel-title">关于作者</view>
@@ -21,7 +21,7 @@
       <block>
         <image class="userinfo-avatar" src="./img/avatar.jpeg" background-size="cover"></image>
         <text class="userinfo-nickname">John Lee</text>
-        <text class="author-info">94年生，喜爱程序开发，目前在杭州从事Java研发的工作。</text>
+        <text class="author-info">94年生，喜爱程序开发，目前在杭州工作，从事Java研发。</text>
         <view class="zan-row">
             <view class="zan-col zan-col-4">
               <image class='icon' src="" background-size="cover"></image>
