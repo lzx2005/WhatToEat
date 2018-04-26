@@ -8,6 +8,12 @@
 ## 效果：
 ![](https://ws1.sinaimg.cn/large/9876e666gy1fpq8m8d6bbj23a42zpu0x.jpg)
 
+## 特别感谢
+- 微信小程序
+- ZanUI
+- 百度地图API
+- 百度Echarts微信小程序版
+- 自己辛苦的劳动
 
 ## 反馈与建议
 - 微博：[@lzx2005](http://weibo.com/u/2557929062)
