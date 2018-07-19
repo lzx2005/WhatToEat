@@ -24,11 +24,11 @@
     </button>
   </view>
   <template is="zan-loadmore" data="{{ loading }}" />
-  <block wx:for="{{dishesObjects}}" wx:for-item="dish">
-    <view id="{{index}}" data-index="{{index}}" class="zan-panel">
+  <block wx:for="{{dishesObjects}}" wx:key='{{index}}' wx:for-item="dish">
+    <view data-id="{{index}}" data-index="{{index}}" class="zan-panel" bindtap='test'>
       <view class="zan-cell  zan-cell--access">
         <view class="zan-cell__bd">
-          <view class="zan-cell__text">
+          <view class="zan-cell__text" bindtap='test2'>
             {{index + 1}}. {{dish.name}}
           </view>
           <view class="zan-cell__desc">

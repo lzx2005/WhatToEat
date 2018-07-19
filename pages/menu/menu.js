@@ -3,7 +3,12 @@ const config = require('../index/config.js');
 var Zan = require('../../wxss/dist/index');
 
 Page(Object.assign({}, Zan.Switch, {
-
+  test:function(e, index){
+    console.log(e, index)
+  },
+  test2: function(e){
+    //console.log(e)
+  },
   /**
    * 页面的初始数据
    */
